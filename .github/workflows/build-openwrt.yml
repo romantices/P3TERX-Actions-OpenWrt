@@ -7,6 +7,7 @@
 #=================================================
 
 name: Build OpenWrt-云 menuconfig（SSH 连接到 Actions）20200115
+#===================================================================
 #  https://p3terx.com/archives/build-openwrt-with-github-actions.html
 on: 
   release:
