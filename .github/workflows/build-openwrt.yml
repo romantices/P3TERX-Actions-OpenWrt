@@ -6,8 +6,8 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt
-
+name: Build OpenWrt-云 menuconfig（SSH 连接到 Actions）20200115
+#  https://p3terx.com/archives/build-openwrt-with-github-actions.html
 on: 
   release:
     types: [published]
@@ -70,8 +70,8 @@ jobs:
         ../$DIY_SH
         make defconfig
 
-#    - name: SSH connection to Actions
-#      uses: P3TERX/debugger-action@master
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
 
     - name: Download package
       run: |
