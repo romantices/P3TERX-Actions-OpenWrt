@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt-云 menuconfig（SSH 连接到 Actions）20200115
+name: Build OpenWrt-X86-20200115
 #===================================================================
 #  https://p3terx.com/archives/build-openwrt-with-github-actions.html
 on: 
@@ -15,8 +15,14 @@ on:
   push:
     branches: 
       - master
+#=================================================================
+#把.config改成自己的.config文件，一共要修改两处，下边是第一处
+#   paths:
+#     - '.config'
+
     paths:
-      - '.config'
+      - 'x86.config'
+
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
@@ -61,8 +67,14 @@ jobs:
 
     - name: Load custom configuration
       env:
-        CONFIG_FILE: '.config'
+        CONFIG_FILE: 'x86.config'
         DIY_SH: 'diy.sh'
+#=================================================================
+#把.config改成自己的.config文件，一共要修改两处，上边是第二处
+#       CONFIG_FILE: '.config'
+#       DIY_SH: 'diy.sh'
+
+
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
