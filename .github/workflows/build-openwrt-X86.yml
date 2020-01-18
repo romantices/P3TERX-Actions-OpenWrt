@@ -12,9 +12,9 @@ name: Build OpenWrt-X86-20200115
 on: 
   release:
     types: [published]
-  push:
-    branches: 
-      - master
+#  push:
+#    branches: 
+#      - master
 #=================================================================
 #把.config改成自己的.config文件，一共要修改两处，下边是第一处
 #   paths:
